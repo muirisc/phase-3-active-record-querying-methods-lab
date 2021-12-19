@@ -99,3 +99,29 @@ You'll be defining the following methods as **class methods** on the `Show` clas
 - [Calculations](http://guides.rubyonrails.org/active_record_querying.html#calculations)
 - [Ordering](http://guides.rubyonrails.org/active_record_querying.html#ordering)
 - [Conditions](http://guides.rubyonrails.org/active_record_querying.html#conditions)
+
+
+
+
+
+
+
+
+
+
+class NAME=createShows < ActiveRecord::Migration[6.1]
+  def change
+    create_table :shows do |t|
+      t.string :name
+      t.string :network
+      t.string :day
+      t.integer :rating
+    end 
+  end
+end
+
+class AddSeasonToShows < ActiveRecord::Migration[6.1]
+  def change
+    add_column :shows, :season, :string
+  end
+end
